@@ -1,5 +1,7 @@
 # assert
 
+[![Build Status](https://cloud.drone.io/api/badges/keyhorn/assert/status.svg)](https://cloud.drone.io/keyhorn/assert)
+
 Assertion library for Go
 
 ## Install
