@@ -3,6 +3,7 @@
 [![Test Status](https://github.com/keyhorn/assert/workflows/test/badge.svg)](https://github.com/keyhorn/assert/actions?query=workflow%3Atest)
 [![Lint Status](https://github.com/keyhorn/assert/workflows/lint/badge.svg)](https://github.com/keyhorn/assert/actions?query=workflow%3Alint)
 [![Coverage Status](https://coveralls.io/repos/github/keyhorn/assert/badge.svg?branch=main)](https://coveralls.io/github/keyhorn/assert?branch=main)
+[![Go Report Card](https://goreportcard.com/badge/github.com/keyhorn/assert)](https://goreportcard.com/report/github.com/keyhorn/assert)
 [![Documentation](https://godoc.org/github.com/keyhorn/assert?status.svg)](http://godoc.org/github.com/keyhorn/assert)
 [![License](https://img.shields.io/github/license/keyhorn/assert.svg?maxAge=2592000)](https://github.com/keyhorn/assert/LICENSE)
 
