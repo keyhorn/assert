@@ -9,7 +9,7 @@ func AllOf(allMatchers ...*Matcher) *Matcher {
 	m.matches = func(actual interface{}) bool {
 		matches := true
 		for x := 0; x < len(allMatchers); x++ {
-			if allMatchers[x].matches(actual) {
+			if !allMatchers[x].matches(actual) {
 				matches = false
 			}
 		}

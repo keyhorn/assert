@@ -39,3 +39,29 @@ func TestAllKeys2(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestAllKeys3(t *testing.T) {
+	var items map[string]string = map[string]string{
+		"go": "golang",
+		"rb": "ruby",
+		"js": "javascript",
+	}
+	var keys = [3]string{"go", "rb", "javascript"}
+
+	if AllKeys(keys).Match(items) {
+		t.Fail()
+	}
+}
+
+func TestAllKeys4(t *testing.T) {
+	var items map[string]string = map[string]string{
+		"go": "golang",
+		"rb": "ruby",
+		"js": "javascript",
+	}
+	var keys = []string{"go", "rb", "javascript"}
+
+	if AllKeys(keys).Match(items) {
+		t.Fail()
+	}
+}

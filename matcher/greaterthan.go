@@ -2,7 +2,8 @@ package matcher
 
 import (
 	"fmt"
-	"reflect"
+
+	"github.com/keyhorn/assert/internal/compare"
 )
 
 // GreaterThan matcher compares two values that are numeric or string values, and when
@@ -12,46 +13,7 @@ func GreaterThan(expected interface{}) *Matcher {
 	m := new(Matcher)
 	m.Describe = fmt.Sprintf("value greater than <%v>", expected)
 	m.matches = func(actual interface{}) bool {
-		expectedValue := reflect.ValueOf(expected)
-		actualValue := reflect.ValueOf(actual)
-		switch expected.(type) {
-		case float32, float64:
-			switch actual.(type) {
-			case float32, float64:
-				return actualValue.Float() > expectedValue.Float()
-			case int, int8, int16, int32, int64:
-				return actualValue.Float() > expectedValue.Float()
-			case uint, uint8, uint16, uint32, uint64:
-				return actualValue.Float() > expectedValue.Float()
-			default:
-				return false
-			}
-		case int, int8, int16, int32, int64:
-			switch actual.(type) {
-			case float32, float64:
-				return actualValue.Float() > expectedValue.Float()
-			case int, int8, int16, int32, int64:
-				return actualValue.Int() > expectedValue.Int()
-			case uint, uint8, uint16, uint32, uint64:
-				return actualValue.Int() > expectedValue.Int()
-			default:
-				return false
-			}
-		case uint, uint8, uint16, uint32, uint64:
-			switch actual.(type) {
-			case float32, float64:
-				return actualValue.Float() > expectedValue.Float()
-			case int, int8, int16, int32, int64:
-				return actualValue.Int() > expectedValue.Int()
-			case uint, uint8, uint16, uint32, uint64:
-				return actualValue.Uint() > expectedValue.Uint()
-			default:
-				return false
-			}
-		case string:
-			return actualValue.String() < expectedValue.String()
-		}
-		return false
+		return compare.GreaterThan(actual, expected)
 	}
 	return m
 }

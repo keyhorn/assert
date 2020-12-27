@@ -1,9 +1,14 @@
 package matcher
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestAllOf(t *testing.T) {
-	if !AllOf(StartsWith("abc def"), EndsWith("def abc")).Match("abc") {
+	if !AllOf(EqualTo("abc"), StartsWith("a"), EndsWith("c")).Match("abc") {
+		t.Fail()
+	}
+	if AllOf(EqualTo("abc"), StartsWith("a"), EndsWith("c")).Match("aBc") {
 		t.Fail()
 	}
 }

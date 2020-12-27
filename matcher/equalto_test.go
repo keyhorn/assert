@@ -1,8 +1,9 @@
 package matcher
 
 import (
-	"fmt"
 	"testing"
+
+	"github.com/keyhorn/assert/internal/testutils"
 )
 
 func TestEqualTo(t *testing.T) {
@@ -34,28 +35,12 @@ func TestEqualTo(t *testing.T) {
 	}
 
 	for _, item := range items {
-		var matcher = EqualTo(item.expected)
-		if matcher.Match(item.actual) != item.result {
-			if item.result == true {
-				t.Errorf("Expected %v == %v", convertToString(item.actual), convertToString(item.expected))
-			} else if item.result == false {
-				t.Errorf("Expected %v != %v", convertToString(item.actual), convertToString(item.expected))
-			}
+		if EqualTo(item.expected).Match(item.actual) != item.result {
+			t.Errorf("[%v] Expected:<%v> Actual: <%v> Result: <%v>",
+				"EqualTo",
+				testutils.ToString(item.expected),
+				testutils.ToString(item.actual),
+				testutils.ToString(item.result))
 		}
 	}
-}
-
-func convertToString(value interface{}) string {
-	var result string
-	switch value.(type) {
-	case int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64:
-		result = fmt.Sprintf("%d", value)
-	case float32, float64:
-		result = fmt.Sprintf("%f", value)
-	case complex64, complex128:
-		result = fmt.Sprintf("%e", value)
-	default:
-		result = fmt.Sprintf("%v", value)
-	}
-	return result
 }

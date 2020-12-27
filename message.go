@@ -25,11 +25,10 @@ func buildMessageFromMsgAndArgs(msgAndArgs ...interface{}) string {
 		return fmt.Sprintf("%+v", msg)
 	}
 	// message and arguments.
-	if len(msgAndArgs) > 1 {
-		msg := msgAndArgs[0]
-		if msgAsStr, ok := msg.(string); ok {
-			return fmt.Sprintf(msgAsStr, msgAndArgs[1:]...)
-		}
+	msg := msgAndArgs[0]
+	if msgAsStr, ok := msg.(string); ok {
+		return fmt.Sprintf(msgAsStr, msgAndArgs[1:]...)
 	}
-	return ""
+
+	return fmt.Sprintf("%+v", msg)
 }
