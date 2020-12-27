@@ -7,6 +7,7 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/keyhorn/assert?branch=main)](https://bettercodehub.com/)
 [![Documentation](https://godoc.org/github.com/keyhorn/assert?status.svg)](http://godoc.org/github.com/keyhorn/assert)
 [![License](https://img.shields.io/github/license/keyhorn/assert.svg?maxAge=2592000)](https://github.com/keyhorn/assert/LICENSE)
+[![Release](https://img.shields.io/github/release/keyhorn/assert.svg?label=Release)](https://github.com/keyhorn/assert/releases)
 
 Assertion library for Go
 
