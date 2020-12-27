@@ -13,8 +13,12 @@ func Empty() *Matcher {
 		if actualValue, ok := actual.(string); ok {
 			return actualValue == ""
 		}
-		if reflect.ValueOf(actual).Len() == 0 {
-			return true
+		actualValue := reflect.ValueOf(actual)
+		switch actualValue.Kind() {
+		case reflect.Array, reflect.Chan, reflect.Map, reflect.Slice, reflect.String:
+			if reflect.ValueOf(actual).Len() == 0 {
+				return true
+			}
 		}
 		return false
 	}

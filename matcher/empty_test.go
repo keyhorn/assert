@@ -15,6 +15,7 @@ func TestEmpty(t *testing.T) {
 		{actual: "", result: true},
 		{actual: make([]int, 0), result: true},
 		{actual: make([]int, 1), result: false},
+		{actual: 1, result: false},
 	}
 
 	for _, item := range items {
