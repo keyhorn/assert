@@ -1,7 +1,7 @@
 # assert
 
-[![Test Status](https://github.com/keyhorn/assert/workflows/test/badge.svg)](https://github.com/actions/keyhorn/actions?query=workflow%3Atest)
-[![Lint Status](https://github.com/keyhorn/assert/workflows/lint/badge.svg)](https://github.com/actions/keyhorn/actions?query=workflow%3Alint)
+![Test Status](https://github.com/keyhorn/assert/workflows/Test/badge.svg)
+![Lint Status](https://github.com/keyhorn/assert/workflows/Lint/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/keyhorn/assert/badge.svg?branch=main)](https://coveralls.io/github/keyhorn/assert?branch=main)
 
 Assertion library for Go
