@@ -6,9 +6,8 @@ import (
 	"github.com/keyhorn/assert/internal/compare"
 )
 
-// LessThan matcher compares two values that are numeric or string values, and when
-// called returns true if actual < expected. Strings are compared lexicographically with '<'.
-// The matcher will always return false for unknown types.
+// LessThan returns a matcher that compares two values that are numeric or string values,
+// and returns true if actual < expected.
 func LessThan(expected interface{}) *Matcher {
 	m := new(Matcher)
 	m.Describe = fmt.Sprintf("value less than <%v>", expected)
@@ -18,7 +17,7 @@ func LessThan(expected interface{}) *Matcher {
 	return m
 }
 
-// LessThanOrEqualTo is a short hand matcher for anyOf(LessThan(x), equalTo(x))
+// LessThanOrEqualTo is a short hand matcher for AnyOf(LessThan(x), equalTo(x))
 func LessThanOrEqualTo(expected interface{}) *Matcher {
 	m := new(Matcher)
 	m.matches = func(actual interface{}) bool {

@@ -6,9 +6,9 @@ import (
 
 func buildMessage(fixedMessage string, expected, actual interface{}, msgAndArgs ...interface{}) string {
 	message := buildMessageFromMsgAndArgs(msgAndArgs...)
-	return fmt.Sprintf("%+v: %+v\n"+
-		"Expected: %+v\n"+
-		"     got: %+v\n", fixedMessage, message, expected, actual)
+	return fmt.Sprintf("%v: %v\n"+
+		"Expected: %v\n"+
+		"     got: %v\n", fixedMessage, message, expected, actual)
 }
 
 func buildMessageFromMsgAndArgs(msgAndArgs ...interface{}) string {
@@ -22,7 +22,7 @@ func buildMessageFromMsgAndArgs(msgAndArgs ...interface{}) string {
 		if msgAsStr, ok := msg.(string); ok {
 			return msgAsStr
 		}
-		return fmt.Sprintf("%+v", msg)
+		return fmt.Sprintf("%v", msg)
 	}
 	// message and arguments.
 	msg := msgAndArgs[0]
@@ -30,5 +30,5 @@ func buildMessageFromMsgAndArgs(msgAndArgs ...interface{}) string {
 		return fmt.Sprintf(msgAsStr, msgAndArgs[1:]...)
 	}
 
-	return fmt.Sprintf("%+v", msg)
+	return fmt.Sprintf("%v", msg)
 }

@@ -40,22 +40,48 @@ func TestExample(t *testing.T) {
 
 ## Matcher list
 
-| Marcher              | Description                                                                                               |
-| -------------------- | --------------------------------------------------------------------------------------------------------- |
-| AnyOf                | Takes some matchers and checks if at least one of the matchers return true.                               |
-| AllOf                | Takes some matchers and checks if all of the matchers return true.                               |
-| Not                  | Negates the given matcher.                                                                                |
-| EqualTo              | Checks if two values are equal.                                                                           |
-| Nil                  | Matches if the actual value is nil.                                                                       |
-| Empty                | Empty matches if the actual is "empty".                                                                   |
-| LessThan             | Compares two values that are numeric or string values, and when called returns true if actual < expected. |
-| LessThanOrEqualTo    | A short hand matcher for anyOf(LessThan(x), equalTo(x))                                                   |
-| GreaterThan          | Compares two values that are numeric or string values, and when called returns true if actual > expected. |
-| GreaterThanOrEqualTo | A short hand matcher for anyOf(GreaterThan(x), EqualTo(x))                                                |
-| StartsWith           | Returns a matcher that matches if the given string is prefixed with the expected string.                  |
-| EndsWith             | Returns a matcher that matches if the given string is suffixed with the expected string.                  |
-| Key                  | checks if actual has a key == expected.                                                                   |
-| AllKeys              | checks if map actual has all keys == expecteds.                                                           |
+### Basic matchers
+
+| Marcher | Description                                                                 |
+| ------- | --------------------------------------------------------------------------- |
+| AnyOf   | Takes some matchers and checks if at least one of the matchers return true. |
+| AllOf   | Takes some matchers and checks if all of the matchers return true.          |
+| Not     | Negates the given matcher.                                                  |
+| EqualTo | Returns true if two values are equal.                                       |
+| Nil     | Returns true if the actual value is nil.                                    |
+| Empty   | Returns true if the actual is "empty".                                      |
+
+### Matchers for string
+
+| Marcher    | Description                                                                                                          |
+| ---------- | -------------------------------------------------------------------------------------------------------------------- |
+| StartsWith | Compares two values that are string values, and returns true if the given string is starts with the expected string. |
+| EndsWith   | Compares two values that are string values, and returns true if the given string is ends with the expected string.   |
+| Contains   | Returns true if the argument is a string that contains a specific substring.                                         |
+
+### Matchers for numerical value
+
+| Marcher              | Description                                                                                   |
+| -------------------- | --------------------------------------------------------------------------------------------- |
+| LessThan             | Compares two values that are numeric or string values, and returns true if actual < expected. |
+| LessThanOrEqualTo    | A short hand matcher for AnyOf(LessThan(x), EqualTo(x))                                       |
+| GreaterThan          | Compares two values that are numeric or string values, and returns true if actual > expected. |
+| GreaterThanOrEqualTo | A short hand matcher for AnyOf(GreaterThan(x), EqualTo(x))                                    |
+
+### Matchers for list(array and slice)
+
+| Marcher            | Description                                                                     |
+| ------------------ | ------------------------------------------------------------------------------- |
+| ContainsIn         | Returns true if all expected values contains in actual list at specified order. |
+| ContainsInAnyOrder | Returns true if all expected values contains in actual list at any order.       |
+
+### Matchers for map
+
+| Marcher  | Description                                           |
+| -------- | ----------------------------------------------------- |
+| HasEntry | Returns true if actual has entry with a conditions.   |
+| HasKey   | Returns true if actual has a key with a conditions.   |
+| HasValue | Returns true if actual has a value with a conditions. |
 
 ## License
 

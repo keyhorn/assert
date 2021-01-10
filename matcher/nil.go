@@ -2,10 +2,10 @@ package matcher
 
 import "reflect"
 
-// Nil matches if the actual value is nil.
+// Nil returns a matcher that returns true if the actual value is nil.
 func Nil() *Matcher {
 	m := new(Matcher)
-	m.Describe = "value that is <nil>"
+	m.Describe = "is <nil>"
 	m.matches = func(actual interface{}) bool {
 		if actual == nil {
 			return true

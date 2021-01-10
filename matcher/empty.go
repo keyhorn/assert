@@ -2,10 +2,10 @@ package matcher
 
 import "reflect"
 
-// Empty matches if the actual is "empty".
+// Empty returns a matcher that returns true if the actual is "empty".
 func Empty() *Matcher {
 	m := new(Matcher)
-	m.Describe = "empty value"
+	m.Describe = "is empty"
 	m.matches = func(actual interface{}) bool {
 		if actual == nil {
 			return true

@@ -6,9 +6,7 @@ import (
 	"github.com/keyhorn/assert/internal/compare"
 )
 
-// GreaterThan matcher compares two values that are numeric or string values, and when
-// called returns true if actual > expected. Strings are compared lexicographically with '>'.
-// The matcher will always return false for unknown types.
+// GreaterThan returns a matcher that Compares two values that are numeric or string values, and returns true if actual > expected.
 func GreaterThan(expected interface{}) *Matcher {
 	m := new(Matcher)
 	m.Describe = fmt.Sprintf("value greater than <%v>", expected)
@@ -18,7 +16,7 @@ func GreaterThan(expected interface{}) *Matcher {
 	return m
 }
 
-// GreaterThanOrEqualTo is a short hand matcher for anyOf(GreaterThan(x), EqualTo(x))
+// GreaterThanOrEqualTo is a short hand matcher for AnyOf(GreaterThan(x), EqualTo(x))
 func GreaterThanOrEqualTo(expected interface{}) *Matcher {
 	m := new(Matcher)
 	m.matches = func(actual interface{}) bool {

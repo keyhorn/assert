@@ -1,6 +1,8 @@
 package compare
 
-import "reflect"
+import (
+	"reflect"
+)
 
 // EqualTo returns true if two values are equal.
 func EqualTo(value1 interface{}, value2 interface{}) bool {
