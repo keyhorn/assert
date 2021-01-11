@@ -16,7 +16,7 @@ func ContainsInAnyOrder(expected interface{}) *Matcher {
 		actualValue := reflect.ValueOf(actual)
 		switch(actualValue.Kind()) {
 		case reflect.Array, reflect.Slice:
-			return containsInAnyOrder(actual, expected);
+			return containsInAnyOrder(actual, expected)
 		}
 		return false
 	}

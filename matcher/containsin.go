@@ -16,7 +16,7 @@ func ContainsIn(expected interface{}) *Matcher {
 		actualValue := reflect.ValueOf(actual)
 		switch(actualValue.Kind()) {
 		case reflect.Array, reflect.Slice:
-			return containsIn(actual, expected);
+			return containsIn(actual, expected)
 		}
 		return false
 	}
