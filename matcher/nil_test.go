@@ -17,7 +17,7 @@ func TestNil(t *testing.T) {
 	}
 
 	for _, item := range items {
-		if Nil().Match(item.actual) != item.result {
+		if Nil().Match(t, item.actual) != item.result {
 			t.Errorf("[%v] Expected:<%v> Actual: <%v> Result: <%v>",
 				"Nil",
 				"nil",

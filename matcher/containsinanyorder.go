@@ -3,6 +3,7 @@ package matcher
 import (
 	"fmt"
 	"reflect"
+	"testing"
 
 	"github.com/keyhorn/assert/internal/compare"
 )
@@ -11,7 +12,7 @@ import (
 func ContainsInAnyOrder(expected interface{}) *Matcher {
 	m := new(Matcher)
 	m.Describe = fmt.Sprintf("contains in <%v>", expected)
-	m.matches = func(actual interface{}) bool {
+	m.matches = func(t *testing.T, actual interface{}) bool {
 		actualValue := reflect.ValueOf(actual)
 		switch(actualValue.Kind()) {
 		case reflect.Array, reflect.Slice:

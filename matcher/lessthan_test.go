@@ -3,25 +3,25 @@ package matcher
 import "testing"
 
 func TestLessThan(t *testing.T) {
-	if !LessThan(100).Match(99) {
+	if !LessThan(100).Match(t, 99) {
 		t.Fail()
 	}
-	if LessThan(100).Match(100) {
+	if LessThan(100).Match(t, 100) {
 		t.Fail()
 	}
-	if LessThan(100).Match(101) {
+	if LessThan(100).Match(t, 101) {
 		t.Fail()
 	}
 }
 
 func TestLessThanOrEqualtTo(t *testing.T) {
-	if !LessThanOrEqualTo(100).Match(99) {
+	if !LessThanOrEqualTo(100).Match(t, 99) {
 		t.Fail()
 	}
-	if !LessThanOrEqualTo(100).Match(100) {
+	if !LessThanOrEqualTo(100).Match(t, 100) {
 		t.Fail()
 	}
-	if LessThanOrEqualTo(100).Match(101) {
+	if LessThanOrEqualTo(100).Match(t, 101) {
 		t.Fail()
 	}
 }

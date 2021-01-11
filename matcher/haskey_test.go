@@ -9,7 +9,7 @@ func TestHasKey1(t *testing.T) {
 		"js": "javascript",
 	}
 
-	if !HasKey(EqualTo("go")).Match(items) {
+	if !HasKey(EqualTo("go")).Match(t, items) {
 		t.Fail()
 	}
 }
@@ -21,13 +21,13 @@ func TestHasKey2(t *testing.T) {
 		"js": "javascript",
 	}
 
-	if HasKey(EqualTo("c++")).Match(items) {
+	if HasKey(EqualTo("c++")).Match(t, items) {
 		t.Fail()
 	}
 }
 
 func TestHasKey3(t *testing.T) {
-	if HasKey(EqualTo("js")).Match("js") {
+	if HasKey(EqualTo("js")).Match(t, "js") {
 		t.Fail()
 	}
 }

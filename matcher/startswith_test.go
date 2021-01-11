@@ -18,7 +18,7 @@ func TestStartsWith(t *testing.T) {
 	}
 
 	for _, item := range items {
-		if StartsWith(item.expected).Match(item.actual) != item.result {
+		if StartsWith(item.expected).Match(t, item.actual) != item.result {
 			t.Errorf("[%v] Expected:<%v> Actual: <%v> Result: <%v>",
 				"StartsWith",
 				testutils.ToString(item.expected),

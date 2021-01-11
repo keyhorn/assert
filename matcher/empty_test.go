@@ -19,7 +19,7 @@ func TestEmpty(t *testing.T) {
 	}
 
 	for _, item := range items {
-		if Empty().Match(item.actual) != item.result {
+		if Empty().Match(t, item.actual) != item.result {
 			t.Errorf("[%v] Expected:<%v> Actual: <%v> Result: <%v>",
 				"Empty",
 				"empty",
