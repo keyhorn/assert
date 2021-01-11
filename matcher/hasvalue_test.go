@@ -9,7 +9,7 @@ func TestHasValue1(t *testing.T) {
 		"js": "javascript",
 	}
 
-	if !HasValue(EqualTo("golang")).Match(t, items) {
+	if !HasValue(EqualTo("golang")).Match(items) {
 		t.Fail()
 	}
 }
@@ -21,13 +21,13 @@ func TestHasValue2(t *testing.T) {
 		"js": "javascript",
 	}
 
-	if HasValue(EqualTo("c++")).Match(t, items) {
+	if HasValue(EqualTo("c++")).Match(items) {
 		t.Fail()
 	}
 }
 
 func TestHasValue3(t *testing.T) {
-	if HasValue(EqualTo("js")).Match(t, "js") {
+	if HasValue(EqualTo("js")).Match("js") {
 		t.Fail()
 	}
 }

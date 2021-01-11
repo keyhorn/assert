@@ -47,3 +47,16 @@ func TestThatIsGreaterThanOrEqualTo(t *testing.T) {
 	That(t, 100, matcher.GreaterThanOrEqualTo(100))
 	That(t, 101, matcher.GreaterThanOrEqualTo(100))
 }
+
+type TestingTMock struct {
+
+}
+
+func (t *TestingTMock) Error(args ...interface{}) {
+
+}
+
+func TestThatError(t *testing.T) {
+	tMock := &TestingTMock{}
+	That(tMock, 100, matcher.EqualTo(101))
+}

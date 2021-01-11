@@ -3,7 +3,6 @@ package matcher
 import (
 	"fmt"
 	"strings"
-	"testing"
 )
 
 // StartsWith returns a matcher that compares two values that are string values,
@@ -11,7 +10,7 @@ import (
 func StartsWith(expected string) *Matcher {
 	m := new(Matcher)
 	m.Describe = fmt.Sprintf("starts with \"%s\"", expected)
-	m.matches = func(t *testing.T, actual interface{}) bool {
+	m.matches = func(actual interface{}) bool {
 		if actualStr, ok := actual.(string); ok {
 			return strings.HasPrefix(actualStr, expected)
 		}

@@ -18,7 +18,7 @@ func TestContains(t *testing.T) {
 	}
 
 	for _, item := range items {
-		if Contains(item.expected).Match(t, item.actual) != item.result {
+		if Contains(item.expected).Match(item.actual) != item.result {
 			t.Errorf("[%v] Expected:<%v> Actual: <%v> Result: <%v>",
 				"EndsWith",
 				testutils.ToString(item.expected),

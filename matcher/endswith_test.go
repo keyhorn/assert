@@ -18,7 +18,7 @@ func TestEndsWith(t *testing.T) {
 	}
 
 	for _, item := range items {
-		if EndsWith(item.expected).Match(t, item.actual) != item.result {
+		if EndsWith(item.expected).Match(item.actual) != item.result {
 			t.Errorf("[%v] Expected:<%v> Actual: <%v> Result: <%v>",
 				"EndsWith",
 				testutils.ToString(item.expected),

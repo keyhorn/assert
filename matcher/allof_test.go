@@ -5,10 +5,10 @@ import (
 )
 
 func TestAllOf(t *testing.T) {
-	if !AllOf(EqualTo("abc"), StartsWith("a"), EndsWith("c")).Match(t, "abc") {
+	if !AllOf(EqualTo("abc"), StartsWith("a"), EndsWith("c")).Match("abc") {
 		t.Fail()
 	}
-	if AllOf(EqualTo("abc"), StartsWith("a"), EndsWith("c")).Match(t, "aBc") {
+	if AllOf(EqualTo("abc"), StartsWith("a"), EndsWith("c")).Match("aBc") {
 		t.Fail()
 	}
 }

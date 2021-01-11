@@ -35,7 +35,7 @@ func TestEqualTo(t *testing.T) {
 	}
 
 	for _, item := range items {
-		if EqualTo(item.expected).Match(t, item.actual) != item.result {
+		if EqualTo(item.expected).Match(item.actual) != item.result {
 			t.Errorf("[%v] Expected:<%v> Actual: <%v> Result: <%v>",
 				"EqualTo",
 				testutils.ToString(item.expected),
